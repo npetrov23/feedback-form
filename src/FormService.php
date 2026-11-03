@@ -4,16 +4,10 @@ namespace App;
 
 class FormService
 {
-    private FormValidator $validator;
-    private MailSender $mailSender;
-
     public function __construct(
-        FormValidator $validator,
-        MailSender $mailSender
-    ) {
-        $this->validator = $validator;
-        $this->mailSender = $mailSender;
-    }
+        private FormValidator $validator,
+        private MailSender $mailSender
+    ) {}
 
     public function handle(array $data): array
     {
